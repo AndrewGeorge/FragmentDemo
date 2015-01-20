@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:flowindicator="http://schemas.android.com/apk/res/com.example.fragmentdemo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/framelayout"
+        android:layout_width="fill_parent"
+        android:layout_height="132dip"
+        android:background="#ffffff" >
+
+        <com.example.fragmentdemo.viewflow.ViewFlow
+            android:id="@+id/viewflow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+        </com.example.fragmentdemo.viewflow.ViewFlow>
+
+        <com.example.fragmentdemo.viewflow.CircleFlowIndicator
+            android:id="@+id/viewflowindic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:padding="@dimen/common_padding"
+             flowindicator:activeColor="#ffffff"
+            flowindicator:activeType="fill"
+            flowindicator:circleSeparation="20dp"
+            flowindicator:inactiveColor="#ffffff"
+            flowindicator:inactiveType="stroke"
+            flowindicator:radiusDimens="4dp"
+            />
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="tabonefragment"
+        android:textSize="20sp" />
+
+</LinearLayout>
