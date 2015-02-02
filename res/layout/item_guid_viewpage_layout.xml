@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0" >
+
+        <ImageView
+            android:id="@+id/item_guid_imageview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/item_guid_viewpage_start_skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="right"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:text="跳过"
+            android:textColor="@color/textColorforItemTitle"
+            android:textSize="@dimen/medium_text_size" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/item_guid_viewpage_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/guid_thread_pic_bottom"
+        android:gravity="center_horizontal"
+        android:visibility="gone" >
+
+        <Button
+            android:id="@+id/item_guid_viewpage_start_experience"
+            android:layout_width="260dp"
+            android:layout_height="54dp"
+            android:background="@drawable/btn_start_experience_selecter"
+            android:textSize="@dimen/medium_text_size" />
+    </LinearLayout>
+
+</LinearLayout>

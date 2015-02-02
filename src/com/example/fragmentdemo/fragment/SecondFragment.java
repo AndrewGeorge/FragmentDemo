@@ -1,5 +1,7 @@
 package com.example.fragmentdemo.fragment;
 
+import org.apache.http.protocol.ResponseDate;
+
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,6 +12,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.android.volley.VolleyError;
+import com.example.fragmentdem.net.GetData;
+import com.example.fragmentdem.net.GetDataFromNet;
+import com.example.fragmentdem.net.onResponListener;
+import com.example.fragmentdem.net.ResponVo;
 import com.example.fragmentdemo.R;
 import com.example.fragmentdemo.adapter.TabFragmentPagerAdapter;
 import com.example.fragmentdemo.childfragment.TabOneFargment;
@@ -17,11 +24,11 @@ import com.example.fragmentdemo.childfragment.TabThreeFargment;
 import com.example.fragmentdemo.childfragment.TabTwoFargment;
 import com.example.fragmentdemo.views.PagerSlidingTabStrip;
 
-public class SecondFragment extends Fragment {
+public class SecondFragment extends Fragment implements onResponListener {
 
 	private ViewPager overseas_Service_ViewPager;
-	private PagerSlidingTabStrip indicator; 
-	
+	private PagerSlidingTabStrip indicator;
+
 	private int iCurrentIndex = 0;
 
 	@Override
@@ -39,15 +46,22 @@ public class SecondFragment extends Fragment {
 		return contentView;
 	}
 
+	private void GetData() {
+
+		GetDataFromNet getDataFromNet = new GetDataFromNet(getActivity(), this,
+				ResponseDate.class);
+
+	}
+
 	private void iniViewt(View contentView) {
 		Class[] fragments = new Class[] { TabOneFargment.class,
 				TabTwoFargment.class, TabThreeFargment.class };
-		
+
 		String[] text = { "tabone", "tabtwo", "tabthree" };
 		int[] icons = { R.drawable.overseas_service_onddaytour_tab_selector,
 				R.drawable.overseas_service_entrancetick_selector,
 				R.drawable.overseas_service_tab_trafic_selecter };
-		
+
 		indicator = (PagerSlidingTabStrip) contentView
 				.findViewById(R.id.oversea_service_indicator);
 		setTabsValue();
@@ -73,7 +87,7 @@ public class SecondFragment extends Fragment {
 		// }
 
 	}
-	
+
 	/**
 	 * 对PagerSlidingTabStrip的各项属性进行赋值。
 	 */
@@ -110,5 +124,17 @@ public class SecondFragment extends Fragment {
 				TypedValue.COMPLEX_UNIT_DIP, 10, dm));
 		indicator.setIconHeight((int) TypedValue.applyDimension(
 				TypedValue.COMPLEX_UNIT_DIP, 20, dm));
+	}
+
+	@Override
+	public void onResponse(ResponVo responVo) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onErrorResponse(VolleyError error, ResponVo responVo) {
+		// TODO Auto-generated method stub
+
 	}
 }

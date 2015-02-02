@@ -4,5 +4,6 @@
     <color name="divide_line_color">#FFCBCBCB</color>
     <color name="light_purple_color">#FF7644C9</color>
     <color name="dark_black_text_color">#FF333333</color>
+     <color name="textColorforItemTitle">#FF666666</color>
     
 </resources>
